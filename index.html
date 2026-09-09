@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
+
+    <title>Daily JavaScript Tasks</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-slate-950 text-white min-h-screen">
 
-    <h1>What is JavaScript</h1>
+    <!-- Header -->
+    <header class="text-center py-16 px-4">
 
-    <p>1. JavaScript is a high-level, interpreted, and dynamically typed programming language.</p>
+    
+        <h1 class="text-4xl md:text-5xl font-bold mt-3">
+            Daily Tasks
+        </h1>
 
-    <p>2. JavaScript is used to make web pages interactive and dynamic.</p>
+    
 
-    <p>3. JavaScript adds additional behaviour and functionalities to the website and without js the webpage is static/p>
-
-    <p>4. JavaScript runs on both the client side and server side.</p>
-
-    <p>5. JavaScript is interpreted and executed using v8 engine which is on our browser.</p>
+    </header>
 
 
-    <script>
+    <!-- Tasks Section -->
+    <main class="max-w-6xl mx-auto px-6 pb-16">
 
-        var userName;
-        var userAge;
-        var homeTown;
-        var phoneNumber;
-        var emailAddress;
-        var jobTitle;
-        var companyName;
-        var projectName;
-        var productName;
-        var orderNumber;
-        var totalPrice;
-        var itemCount;
-        var accountType;
-        var loginStatus;
-        var userRole;
-        var startDate;
-        var endDate;
-        var birthDate;
-        var courseName;
-        var subjectName;
-        var examMarks;
-        var testResult;
-        var fileName;
-        var pageTitle;
-        var pageNumber;
-        var imagePath;
-        var errorMessage;
-        var successMessage;
-        var currentTime;
-        var accountBalance;
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    </script>
+
+            <!-- Day 01 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6
+                        hover:border-blue-500 hover:-translate-y-1
+                        transition duration-300">
+
+                <span class="inline-block bg-blue-500/10 text-blue-400
+                             px-3 py-1 rounded-full text-sm font-semibold">
+                    DAY 01
+                </span>
+
+                <h2 class="text-xl font-bold mt-5">
+                    JavaScript Introduction
+                </h2>
+
+                <p class="text-slate-400 mt-3">
+                    Learn what JavaScript is, where it is used and how to
+                    include JavaScript in an HTML page.
+                </p>
+
+                <a href="./BackEnd/JS/Day_1/intro.html"
+                   class="inline-block mt-6 bg-blue-600 hover:bg-blue-700
+                          px-5 py-2.5 rounded-lg font-medium
+                          transition duration-300">
+                    View Task →
+                </a>
+
+            </div>
+
+
+            
+
+        </div>
+
+    </main>
 
 </body>
-
 </html>
