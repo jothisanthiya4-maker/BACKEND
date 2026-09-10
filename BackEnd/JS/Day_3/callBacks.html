@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">clousure functions and callback function</h1>
+<script>
+
+const add=(a,res)=>{
+    
+    if(a%2==0){
+        res("even")
+    }
+    else{
+        res("odd")
+    }
+
+}
+
+add(20,(result)=>{
+    console.log("result",result);
+    
+})
+
+// PRIVATE BANK BALANCE
+
+const createBankAccount=()=>{
+    let balance=5000
+
+    const checkBalance=()=>{
+        balance+=1000
+        console.log(balance);
+        
+    }
+
+    return checkBalance
+}
+
+let call=createBankAccount()
+call()
+call()
+call()
+
+// DEPOSIT USING CLOSURE
+
+const createAccount=()=>{
+    let balancee = 1000
+
+    const obj={
+        deposit:function(amt){
+            balancee+=amt
+        },
+        getBalance:function(){
+            console.log("current balance is :",balancee);
+            
+        }
+    }
+
+    return obj
+}
+
+let calll=createAccount()
+calll.deposit(200)
+calll.getBalance()
+
+// PRIVATE COUNTER
+
+const createCounter=()=>{
+
+    let count=0
+
+    let obj={
+        increment:function(){
+            count++
+        },
+        decrement:function(){
+            count--
+        },
+        getCount:function(){
+            console.log(count);
+            
+        }
+    }
+
+    return obj
+}
+
+let counter=createCounter()
+counter.increment()
+counter.increment()
+counter.increment()
+counter.decrement()
+counter.getCount()
+
+//  EMPLOYEE SALARY PRIVACY
+
+const createEmployee=(name,salary)=>{
+
+    let obj={
+        getName:function(){
+            console.log(name);
+            
+        },
+        getSalary:function(){
+            console.log(salary);
+            
+        },
+        increaseSalary:function(inc){
+            if(inc >0){
+                salary+=inc
+                console.log(salary);
+                
+            }
+            else{
+                console.log("give valid amount");
+                
+            }
+        }
+    }
+
+    return obj
+
+
+}
+
+let sal=createEmployee("jothi",20000)
+sal.getSalary()
+sal.getName()
+sal.increaseSalary(5000)
+
+</script>
+
+</body>
+</html>
