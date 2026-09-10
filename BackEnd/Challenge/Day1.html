@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let number = 11  //number to check
+let factors=0   //for counting how many factors the number has 
+
+for(let n=1; n<=number; n++){   //to iterate from 1 to the given number 
+    if(number%n==0){            // to check whether it is divisible 
+        factors++               // if divisible increase the factor count
+    }
+}
+
+if(factors==2){      //if it only has two factors print it is prime number 
+    console.log("prime number");
+    
+}
+else{       //else print it is not prime number 
+    console.log("not a prime number");
+    
+}
+
+
+    </script>
+</body>
+</html>
