@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <h1 style="text-align: center;">clousure functions</h1>
+
+    <script>
+
+// task 1
+
+const createEmployee=()=>{
+    
+    let amount=0
+
+    return (salary)=>{
+        amount += salary
+        console.log(amount);
+        
+    }
+
+}
+
+let update=createEmployee()
+update(1000)
+update(1000)
+update(1000)
+
+
+// task 2
+
+const createStock=()=>{
+    let stock=10
+
+    let obj={
+        addStock:(add)=>{
+            stock+=add
+            console.log(stock);
+            
+        },
+        sellProduct:(sell)=>{
+            if(sell<stock){
+                stock-= sell
+            console.log(stock);
+            }
+            else{
+                console.log("insufficient stock");
+                
+            }
+        }
+    }
+
+    return obj
+}
+
+let product=createStock()
+product.addStock(5)
+product.sellProduct(5)
+product.sellProduct(11)
+
+    </script>
+</body>
+</html>
