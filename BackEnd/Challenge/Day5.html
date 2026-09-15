@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // FREQUENCY OF ARRAY ELEMENTS
+
+        let arr=[1,2,3,5,1,6,3,3,4,2]
+        let box=[]
+        
+        console.log(arr);
+
+        for(let i=0;i<arr.length;i++){
+            let contain=false
+            for(let j=0;j<box.length;j++){
+                if(arr[i]==box[j]){
+                    contain=true
+                }
+            }
+
+            if(!contain){
+                     let count=0
+                     for(let j=0;j<arr.length;j++){
+                        if(arr[i]==arr[j]){
+                            count++
+                        }
+                     }
+                     console.log(`count of ${arr[i]} = ${count}`);
+                     box[box.length]=arr[i]  
+        }
+        }
+
+        
+        
+        
+    </script>
+</body>
+</html>

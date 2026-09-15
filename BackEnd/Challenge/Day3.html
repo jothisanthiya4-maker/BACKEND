@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Find pairs with given sum
+
+let Array = [2, 4, 3, 5, 7, 8, 9]
+let Target = 7
+
+for(let i=0;i<Array.length;i++){
+    for(let j=i+1;j<Array.length;j++){
+        if(Array[i] + Array[j]==Target){
+            console.log(` ${Array[i]} + ${Array[j]} = 7 `)
+        }
+    }
+}
+
+    </script>
+</body>
+</html>
