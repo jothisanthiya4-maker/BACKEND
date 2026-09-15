@@ -8,6 +8,10 @@ const RINGS = [
   { stage: 'Growing', r: 0.68 },
   { stage: 'Emerging', r: 0.94 },
 ]
+const NODE_POSITIONS = [
+  { left: '18%', top: '22%' }, { left: '49%', top: '14%' }, { left: '79%', top: '27%' }, { left: '27%', top: '51%' }, { left: '65%', top: '48%' },
+  { left: '13%', top: '77%' }, { left: '46%', top: '82%' }, { left: '82%', top: '73%' }, { left: '34%', top: '35%' }, { left: '65%', top: '64%' },
+]
 
 function polarToCartesian(angleDeg, radiusFraction) {
   const angleRad = (angleDeg - 90) * (Math.PI / 180)
@@ -24,8 +28,39 @@ export default function TechRadar() {
 
   return (
     <div className="mt-14 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-12">
-      {/* Radar visualization */}
       <div className="relative mx-auto w-full max-w-[440px]">
+        <div className="relative aspect-square overflow-hidden rounded-3xl border border-cyan/20 bg-deep/50 shadow-[0_0_70px_rgba(34,211,238,0.12)]">
+          <div className="absolute inset-0 bg-grid-lines bg-grid opacity-30" aria-hidden="true" />
+          <div className="absolute -left-16 top-8 h-36 w-36 rounded-full bg-cyan/20 blur-3xl animate-float" aria-hidden="true" />
+          <div className="absolute -bottom-12 right-0 h-40 w-40 rounded-full bg-orchid/20 blur-3xl animate-float-slow" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-cyan/70 shadow-[0_0_24px_5px_rgba(34,211,238,0.25)] animate-scan-line" aria-hidden="true" />
+          <div className="absolute left-5 top-5 font-mono text-[10px] tracking-[0.28em] text-cyan/60">TECH SIGNAL GRID</div>
+          <div className="absolute right-5 top-5 font-mono text-[10px] tracking-[0.2em] text-mist/35">2030</div>
+          <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-cyan/35 bg-void/80 font-display text-sm font-bold tracking-[0.18em] text-cyan shadow-[0_0_35px_rgba(34,211,238,0.28)]">
+            2030
+            <span className="absolute inset-[-10px] rounded-full border border-cyan/20 animate-ping" />
+          </div>
+          {technologies.map((technology, index) => {
+            const isSelected = technology.id === selectedId
+            const color = stageMeta[technology.stage]?.color || '#4BB8FA'
+            const position = NODE_POSITIONS[index]
+            return (
+              <button key={technology.id} type="button" onClick={() => setSelectedId(technology.id)} className="group absolute -translate-x-1/2 -translate-y-1/2 text-left" style={{ left: position.left, top: position.top }} aria-pressed={isSelected}>
+                <span className={`relative flex h-9 w-9 items-center justify-center rounded-xl border bg-void/90 transition-all duration-300 group-hover:scale-110 ${isSelected ? 'scale-110 shadow-[0_0_24px_rgba(75,184,250,0.5)]' : ''}`} style={{ borderColor: `${color}${isSelected ? 'cc' : '66'}` }}>
+                  <span className="h-2.5 w-2.5 rounded-full animate-pulse" style={{ backgroundColor: color }} />
+                  {isSelected && <span className="absolute inset-[-5px] rounded-2xl border animate-pulse" style={{ borderColor: `${color}66` }} />}
+                </span>
+                <span className={`absolute left-1/2 top-11 w-24 -translate-x-1/2 text-center font-mono text-[8px] leading-tight transition-colors ${isSelected ? 'text-mist' : 'text-mist/45 group-hover:text-mist/80'}`}>{technology.name}</span>
+              </button>
+            )
+          })}
+          <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-x-3 gap-y-1">
+            {Object.entries(stageMeta).map(([stage, meta]) => <span key={stage} className="flex items-center gap-1.5 font-mono text-[9px] text-mist/45"><span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: meta.color }} />{stage}</span>)}
+          </div>
+        </div>
+
+      {/* Retained only as a non-rendering fallback for the original interaction model. */}
+      <div className="hidden">
         <svg viewBox="0 0 400 400" className="w-full" role="img" aria-label="Interactive 2030 technology radar">
           {/* Concentric rings */}
           {RINGS.map((ring) => (
@@ -134,6 +169,8 @@ export default function TechRadar() {
             </div>
           ))}
         </div>
+      </div>
+
       </div>
 
       {/* Detail panel */}
