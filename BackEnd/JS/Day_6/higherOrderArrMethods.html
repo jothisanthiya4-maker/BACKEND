@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Higher Order Array Methods</h1>
+    <script>
+
+// task 1
+
+let salaries = [15000, 20000, 25000, 30000, 35000];
+
+let updatedSalaries = salaries.map((salary) => {
+    return salary + 2000;
+});
+
+console.log(salaries);
+console.log(updatedSalaries);
+
+// task 2
+
+let marks = [35, 78, 42, 90, 25, 67, 55];
+
+let eligible = marks.filter((mark) => {
+    return mark >= 50;
+});
+
+console.log(eligible);
+
+// task 3
+
+let products = [
+    { id: 101, name: "Laptop", price: 55000 },
+    { id: 102, name: "Mouse", price: 800 },
+    { id: 103, name: "Keyboard", price: 1500 },
+    { id: 104, name: "Monitor", price: 12000 }
+];
+
+let product = products.find((item) => {
+    return item.id == 103;
+});
+
+console.log(product);
+console.log(product.name);
+
+// task 4
+
+let cart = [
+
+    { name: "Shirt", price: 1200 },
+
+    { name: "Shoes", price: 2500 },
+
+    { name: "Watch", price: 3000 },
+
+    { name: "Bag", price: 1500 }
+
+];
+
+let loop = cart.reduce((total,e)=>{
+   return total += e.price
+},0)
+
+console.log(loop);
+
+// task 5
+
+let students = [
+    { id: 1, name: "Arun", mark: 85 },
+    { id: 2, name: "Bala", mark: 45 },
+    { id: 3, name: "Kumar", mark: 72 },
+    { id: 4, name: "Priya", mark: 95 },
+    { id: 5, name: "Ravi", mark: 38 }
+];
+
+// MAP
+let names = students.map((student) => {
+    return student.name;
+});
+
+console.log(names);
+
+
+// FILTER
+let passed = students.filter((student) => {
+    return student.mark >= 60;
+});
+
+console.log(passed);
+
+
+// FIND
+let student = students.find((student) => {
+    return student.id == 4;
+});
+
+console.log(student);
+
+
+// REDUCE - Total
+let totalMarks = students.reduce((sum, student) => {
+    return sum + student.mark;
+}, 0);
+
+console.log(totalMarks);
+
+
+// REDUCE - Average
+let average = students.reduce((sum, student) => {
+    return sum + student.mark;
+}, 0) / students.length;
+
+console.log(average);
+
+    </script>
+</body>
+</html>
