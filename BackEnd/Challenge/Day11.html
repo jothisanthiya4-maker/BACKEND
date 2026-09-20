@@ -1,0 +1,23 @@
+<script>
+
+        // Find the largest difference between two adjacent numbers
+
+let numbers = [4, 9, 2, 15, 7];
+
+let largestDifference = 0;
+
+for (let i = 0; i < numbers.length - 1; i++) {
+
+    let difference = numbers[i + 1] - numbers[i];
+
+    if (difference < 0) {
+        difference = difference * -1;
+    }
+
+    if (difference > largestDifference) {
+        largestDifference = difference;
+    }
+}
+
+console.log("Largest difference between adjacent numbers:", largestDifference);
+</script>

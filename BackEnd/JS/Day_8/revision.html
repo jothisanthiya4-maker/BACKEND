@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let balance = 15000
+let withdrawAmount = 4000
+
+if(withdrawAmount <= 0){
+    console.log("Amount must be greater than 0")
+}
+else if(withdrawAmount % 500 != 0){
+    console.log("Amount must be a multiple of 500")
+}
+else if(withdrawAmount > balance){
+    console.log("Insufficient balance")
+}
+else{
+    balance = balance - withdrawAmount
+    console.log("Withdrawal Successful")
+    console.log("Remaining Balance:", balance)
+}
+    </script>
+</body>
+</html>

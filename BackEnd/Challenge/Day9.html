@@ -1,0 +1,100 @@
+<script>
+
+
+const operations = (arr, target) => {
+
+    let add = ""
+    let minus = ""
+    let mul = ""
+    let div = ""
+    let remaining = ""
+
+    for(let i = 0; i < arr.length - 1; i++){
+
+        for(let j = i + 1; j < arr.length; j++){
+
+            let flag = false
+
+            if(arr[i] + arr[j] == target){
+                add += `${arr[i]} + ${arr[j]} = ${target} \n`
+                flag = true
+            }
+
+            if(arr[i] - arr[j] == target){
+                minus += `${arr[i]} - ${arr[j]} = ${target} \n`
+                flag = true
+            }
+
+            if(arr[j] - arr[i] == target){
+                minus += `${arr[j]} - ${arr[i]} = ${target} \n`
+                flag = true
+            }
+
+            if(arr[i] * arr[j] == target){
+                mul += `${arr[i]} x ${arr[j]} = ${target} \n`
+                flag = true
+            }
+
+            if(arr[i] / arr[j] == target){
+                div += `${arr[i]} / ${arr[j]} = ${target} \n`
+                flag = true
+            }
+
+            if(arr[j] / arr[i] == target){
+                div += `${arr[j]} / ${arr[i]} = ${target} \n`
+                flag = true
+            }
+
+            if(!flag){
+                remaining += `${arr[j]} & ${arr[i]} \n`
+            }
+        }
+    }
+
+    add = add || "There is no satisfying pair"
+    minus = minus || "There is no satisfying pair"
+    mul = mul || "There is no satisfying pair"
+    div = div || "There is no satisfying pair"
+    remaining = remaining || "There are no remaining pairs"
+
+    console.log("The pair that matches the target while adding")
+    console.log(add)
+
+    console.log("The pair that matches the target while subtracting")
+    console.log(minus)
+
+    console.log("The pair that matches the target while multiplying")
+    console.log(mul)
+
+    console.log("The pair that matches the target while dividing")
+    console.log(div)
+
+    console.log("The pair that does not match with any operations")
+    console.log(remaining)
+}
+
+operations([2,3,4,5,6,7,8,9,0], 5)
+
+
+// Move zeros to the end
+
+let arr = [0, 1, 0, 3, 12]
+let newarr = []
+let count = 0
+
+for(let i=0;i<arr.length;i++){
+
+    if(arr[i] != 0){
+        newarr[newarr.length] = arr[i]
+    }
+    else{
+        count++
+    }
+}
+
+for(let i=0;i<count;i++){
+    newarr[newarr.length] = 0
+}
+
+console.log(newarr)
+</script>
