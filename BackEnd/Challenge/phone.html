@@ -2,7 +2,7 @@
 
 let letters={2:"abc",3:"def",4:"ghi",5:"jkl",6:"mno",7:"pqrs",8:"tuv",9:"wxyz"}
 
-let input ="23"
+let input ="2345"
 let valid=true
 
 for(let i=0;i<input.length;i++){
@@ -14,14 +14,43 @@ for(let i=0;i<input.length;i++){
 if(valid){
 
     if(input.length==1){
-        console.log(letters[input]);
+        console.log(`['${letters[input]}']`);
+    }
+
+    else{
+        let first=letters[input[0]]
+        let second=letters[input[1]]
+        let combination=[]
+
+        for(let i=0;i<first.length;i++){
+            for(let j=0;j<second.length;j++){
+                combination.push(`${first[i]}${second[j]}`)
+            }
+        }
+        if(input.length==2){
+            console.log(combination);
+        }
+        else{
+            let result = combination
+
+            for(let i=2;i<input.length;i++){
+                let current=letters[input[i]]
+                let newResult=[]
+                for(let j=0;j<current.length;j++){
+                    for(let k=0;k<result.length;k++){
+                        newResult.push(`${current[j]}${result[k]}`)
+                    }
+                }
+                result=newResult
+            }
+            console.log(result);
+            
+        }
         
     }
 }
 else{
-
     console.log("invalid number");
-    
 }
 
-</script>
+</script>jo
