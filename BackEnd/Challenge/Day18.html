@@ -1,0 +1,23 @@
+<script>
+    // Find the Missing Pair / unique number
+
+let numbers = [4, 7, 2, 4, 9, 2, 7];
+let uniqueNumber;
+
+for (let i = 0; i < numbers.length; i++) {
+
+    let count = 0;
+
+    for (let j = 0; j < numbers.length; j++) {
+        if (numbers[i] === numbers[j]) {
+            count++;
+        }
+    }
+    if (count === 1) {
+        uniqueNumber = numbers[i];
+        break;
+    }
+}
+console.log("Number appearing once:", uniqueNumber);
+
+</script>

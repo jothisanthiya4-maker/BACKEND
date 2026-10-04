@@ -1,0 +1,25 @@
+<script>
+    // Team Formation
+
+let skills = [3, 5, 3, 2, 5, 5, 2, 3];
+
+let count = {};
+let pairs = 0;
+
+for (let i = 0; i < skills.length; i++) {
+
+    let skill = skills[i];
+
+    if (count[skill] === undefined) {
+        count[skill] = 1;
+    } else {
+        count[skill]++;
+
+        if (count[skill] % 2 === 0) {
+            pairs++;
+        }
+    }
+}
+
+console.log("Total pairs:", pairs);
+</script>

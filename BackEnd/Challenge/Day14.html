@@ -1,0 +1,22 @@
+<script>
+    // Reverse the words in a sentence
+
+let sentence = "I love learning JavaScript";
+
+let word = "";
+let result = "";
+
+for (let i = sentence.length - 1; i >= 0; i--) {
+
+    if (sentence[i] !== " ") {
+        word = sentence[i] + word;
+    } else {
+        result = result + word + " ";
+        word = "";
+    }
+}
+
+result = result + word;
+
+console.log(result);
+</script>

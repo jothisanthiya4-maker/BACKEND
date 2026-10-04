@@ -1,0 +1,27 @@
+<script>
+    // Find the Number With the Most Divisors
+
+let numbers = [6, 10, 12, 15, 7];
+let highestDivisorCount = 0;
+let numberWithMostDivisors = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+
+    let divisorCount = 0;
+
+    for (let j = 1; j <= numbers[i]; j++) {
+
+        if (numbers[i] % j === 0) {
+            divisorCount++;
+        }
+    }
+
+    if (divisorCount > highestDivisorCount) {
+        highestDivisorCount = divisorCount;
+        numberWithMostDivisors = numbers[i];
+    }
+}
+
+console.log("Number with most divisors:", numberWithMostDivisors);
+console.log("Divisor count:", highestDivisorCount);
+</script>

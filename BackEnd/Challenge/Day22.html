@@ -1,0 +1,29 @@
+<script>
+    // Find the Longest Decreasing Streak
+
+    let numbers = [12, 9, 7, 10, 8, 5, 3, 6];
+
+let count = 0;
+let streak = 0;
+
+for(let i = 0; i < numbers.length - 1; i++){
+
+    if(numbers[i] > numbers[i + 1]){
+        count++;
+    }
+    else{
+        if(count > streak){
+            streak = count;
+        }
+
+        count = 0;
+    }
+}
+
+if(count > streak){
+    streak = count;
+}
+
+console.log(`The longest decreasing streak is : ${streak}`);
+    
+</script>

@@ -1,0 +1,25 @@
+<script>
+    // Find the Longest Continuous Same-Value Streak
+
+let numbers = [2, 2, 5, 5, 5, 3, 3, 7, 7, 7, 7, 4];
+let currentCount = 1;
+let longestCount = 1;
+let longestNumber = numbers[0];
+
+for (let i = 1; i < numbers.length; i++) {
+
+    if (numbers[i] === numbers[i - 1]) {
+        currentCount++;
+    } else {
+        currentCount = 1;
+    }
+
+    if (currentCount > longestCount) {
+        longestCount = currentCount;
+        longestNumber = numbers[i];
+    }
+}
+
+console.log("Number with longest streak:", longestNumber);
+console.log("Streak length:", longestCount);
+</script>

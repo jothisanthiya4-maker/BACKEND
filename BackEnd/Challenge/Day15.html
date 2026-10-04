@@ -1,0 +1,16 @@
+<script>
+    // Find the longest gap between two consecutive numbers in an array.
+
+let numbers = [5, 8, 15, 16, 25, 30];
+let largestGap = 0;
+for (let i = 0; i < numbers.length - 1; i++) {
+    let gap = numbers[i + 1] - numbers[i];
+    if (gap < 0) {
+        gap = gap * -1;
+    }
+    if (gap > largestGap) {
+        largestGap = gap;
+    }
+}
+console.log("Largest gap:", largestGap);
+</script>

@@ -1,0 +1,31 @@
+<script>
+
+    // Find the longest consecutive sequence of the same digit in a number.
+
+let number = 122233344;
+
+let previousDigit = -1;
+let currentCount = 0;
+let maxCount = 0;
+
+while (number > 0) {
+
+    let digit = number % 10;
+
+    if (digit === previousDigit) {
+        currentCount++;
+    } else {
+        currentCount = 1;
+    }
+
+    if (currentCount > maxCount) {
+        maxCount = currentCount;
+    }
+
+    previousDigit = digit;
+
+    number = (number - digit) / 10;
+}
+
+console.log("Longest consecutive sequence:", maxCount);
+</script>

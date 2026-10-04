@@ -1,0 +1,26 @@
+<script>
+    // Find the Pair With the Largest Sum
+
+let numbers = [4, 9, 2, 15, 7, 6];
+
+let largestSum = 0;
+let firstNumber;
+let secondNumber;
+
+for (let i = 0; i < numbers.length; i++) {
+
+    for (let j = i + 1; j < numbers.length; j++) {
+
+        let sum = numbers[i] + numbers[j];
+
+        if (sum > largestSum) {
+            largestSum = sum;
+            firstNumber = numbers[i];
+            secondNumber = numbers[j];
+        }
+    }
+}
+
+console.log("Largest pair:", firstNumber, "and", secondNumber);
+console.log("Largest sum:", largestSum);
+</script>
