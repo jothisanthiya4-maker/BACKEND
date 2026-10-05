@@ -1,0 +1,19 @@
+<script>
+
+    // Find the Safe Jump
+
+let heights = [10, 13, 17, 19, 24, 26, 31]
+let unsafePlatform
+for (let i = 0; i < heights.length - 1; i++) {
+    let difference = heights[i + 1] - heights[i];
+    if (difference > 5) {
+        unsafePlatform = heights[i];
+        break;
+    }
+}
+if (unsafePlatform !== undefined) {
+    console.log("Unsafe jump starts at:", unsafePlatform);
+} else {
+    console.log("No unsafe jump");
+}
+</script>

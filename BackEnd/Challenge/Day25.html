@@ -1,0 +1,31 @@
+<script>
+//   Rearrange Without Sorting
+
+let numbers = [5, -2, 8, -7, 3, -1, 6];
+
+let negativeNumbers = [];
+let positiveNumbers = [];
+
+for (let i = 0; i < numbers.length; i++) {
+
+    if (numbers[i] < 0) {
+        negativeNumbers[negativeNumbers.length] = numbers[i];
+    } else {
+        positiveNumbers[positiveNumbers.length] = numbers[i];
+    }
+}
+
+let result = [];
+
+for (let i = 0; i < negativeNumbers.length; i++) {
+    result[result.length] = negativeNumbers[i];
+}
+
+for (let i = 0; i < positiveNumbers.length; i++) {
+    result[result.length] = positiveNumbers[i];
+}
+
+console.log(result);
+
+
+</script>

@@ -1,0 +1,17 @@
+<script>
+    // Target Combination
+
+let numbers = [2, 7, 4, 5, 3, 8, 1];
+let target = 9;
+let pairCount = 0;
+for (let i = 0; i < numbers.length; i++) {
+      for (let j = i + 1; j < numbers.length; j++) {
+        let sum = numbers[i] + numbers[j];
+        if (sum === target) {
+            pairCount++;
+        }
+    }
+}
+console.log("Total pairs:", pairCount);
+
+</script>
