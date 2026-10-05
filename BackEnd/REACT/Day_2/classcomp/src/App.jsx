@@ -12,7 +12,7 @@ const App = () => {
       <Comp2/>
       <Comp3/>
       <Comp4/>
-      <Comp5/>
+      <Comp5  />
     </div>
   )
 }
