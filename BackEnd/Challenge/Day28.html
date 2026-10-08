@@ -1,0 +1,58 @@
+<script>
+
+    // 
+
+   let Input= [5, 2, 9, 6, 3, 7]
+   let result=[]
+   
+   for(let i=0;i<Input.length-1;i++){
+    let greater=Input[i+1]
+    for(let j=i+1;j<Input.length;j++){
+        if(Input[j]>Input[i] && Input[j]<greater){
+            greater=Input[j]
+        }
+    }
+    
+    
+    if(greater>Input[i]){
+        result[i]=greater
+       
+        
+    }
+    else{
+        result[i]=-1
+    }
+    
+    
+   }
+   result[result.length]=-1
+   console.log(result);
+
+
+//    Find the First Valid Combination
+
+let numbers = [4, 7, 2, 9, 5, 6]
+let target = 11
+let firstNumber
+let secondNumber
+let found = false
+
+for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+       let sum = numbers[i] + numbers[j];
+       if (sum === target) {
+            firstNumber = numbers[i]
+            secondNumber = numbers[j]
+            found = true
+            break
+        }
+    }
+
+    if (found) {
+        break
+    }
+}
+
+console.log("First pair:", firstNumber, "and", secondNumber);
+   
+</script>

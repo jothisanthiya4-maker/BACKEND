@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar"
 
 const Home = () => {
+
+const navigate = useNavigate()
 
     const cardsData = [
   {
@@ -28,17 +31,26 @@ const Home = () => {
     author: "Chris Lee"
   }
 ];
+
+
+const handlemove = (userid)=>{
+
+  navigate(`/productdeatils/${userid}`)
+  
+}
+
   return (
     <>
     <div className="">
         <div className="  bg-gray-500 flex justify-center items-center h-200 ">
         <div className="flex gap-5 p-5">
             {cardsData.map((e)=>(
-                <div key={e.id} className="flex flex-col gap-15 bg-gray-200 h-100 rounded-2xl items-center p-10">
+                <div key={e.id} className="flex flex-col gap-15 bg-gray-200 h-120 rounded-2xl items-center p-10">
                     <h1>Title : {e.title}</h1>
                     <h4>Description :{e.description}</h4>
                     <p>Category :{e.category}</p>
                     <p>Author :{e.author}</p>
+                    <button onClick={()=>handlemove(e.id)}>View Details</button>
                 </div>
             ))}
         </div>

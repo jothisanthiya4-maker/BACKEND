@@ -4,6 +4,7 @@ import About from '../pages/About'
 import Home from '../pages/Home'
 import Contact from '../pages/Contact'
 import Help from '../pages/Help'
+import ProductDetails from '../pages/ProductDetails'
 
 const Rout = () => {
   return (
@@ -13,6 +14,7 @@ const Rout = () => {
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/help' element={<Help/>} />
+        <Route path='/productdeatils/:id' element={<ProductDetails/>} />
       </Routes>
     </>
   )

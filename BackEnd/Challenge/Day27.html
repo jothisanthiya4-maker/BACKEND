@@ -1,0 +1,27 @@
+<script>
+
+    // Find the Majority Number
+
+let numbers = [2, 2, 1, 2, 3, 2, 2];
+
+let majorityNumber;
+
+for (let i = 0; i < numbers.length; i++) {
+
+    let count = 0;
+
+    for (let j = 0; j < numbers.length; j++) {
+
+        if (numbers[i] === numbers[j]) {
+            count++;
+        }
+    }
+
+    if (count > numbers.length / 2) {
+        majorityNumber = numbers[i];
+        break;
+    }
+}
+
+console.log("Majority number:", majorityNumber);
+</script>
