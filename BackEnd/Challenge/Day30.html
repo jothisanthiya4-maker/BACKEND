@@ -1,0 +1,29 @@
+<script>
+    // Find the Number That Can Be Built
+let numbers = [3, 8, 12, 20, 25, 30];
+
+let result;
+
+for (let i = 0; i < numbers.length; i++) {
+
+    for (let j = 0; j < i; j++) {
+
+        for (let k = j + 1; k < i; k++) {
+
+            if (numbers[j] + numbers[k] === numbers[i]) {
+                result = numbers[i];
+                break;
+            }
+        }
+
+        if (result !== undefined) {
+            break;
+        }
+    }
+
+    if (result !== undefined) {
+        break;
+    }
+}
+
+</script>
