@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 const App = () => {
 
   const [input, setInput] = useState("")
-  const [vowels, setVowels] = useState("aeiou")
+  const [vowels, setVowels] = useState("aeiouAEIOU")
   const [result, setResult] = useState("")
 
   const handleclick = () => {
@@ -14,7 +14,7 @@ const App = () => {
     for (let i = 0; i < input.length; i++) {
       for (let j = 0; j < vowels.length; j++) {
         if (input[i] == vowels[j]) {
-          setResult((p) => p + input[i] + "  ")
+          setResult((p) => `${p} ${input[i]}`)
         }
       }
     }
