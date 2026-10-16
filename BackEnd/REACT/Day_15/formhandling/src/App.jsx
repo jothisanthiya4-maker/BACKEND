@@ -47,7 +47,7 @@ const App = () => {
         </button>
 
         <h2 className="text-xl font-semibold text-gray-700 mt-6 break-words">
-          Vowels: {result}
+          Vowels: { result}
         </h2>
 
       </div>
