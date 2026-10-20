@@ -1,0 +1,48 @@
+<script>
+
+    const outer =()=>{
+        let balance=5000
+
+        const timestamp = () => {
+            return new Date().toLocaleString()
+        }
+        
+
+        const obj = {credit:function(credit){
+            balance+=credit
+            console.log("successfully credited and balance is :", balance );
+            console.log("Date and time", timestamp());
+            
+            
+        },
+        debit:function(debit){
+            if(debit>balance){
+                console.log("insufficient balance");
+                
+            }
+            else{
+                balance-=debit
+                console.log("successfully credited and balance is :", balance);
+                console.log("Date and time", timestamp());
+                
+            }
+        },
+        balance:function(){
+            console.log("current balance is :",balance);
+            console.log("Date and time", timestamp());
+            
+        },
+        
+    }
+
+    return obj
+
+
+    }
+
+    let result=outer()
+    result.credit(2000)
+    result.debit(3000)
+    result.balance()
+
+</script>

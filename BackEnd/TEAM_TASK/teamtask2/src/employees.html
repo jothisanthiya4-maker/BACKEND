@@ -1,0 +1,24 @@
+<script>
+
+    let employee=[{name:"jothi",dept:"cs",salary:20000},
+    {name:"divya",dept:"ds",salary:30000},
+    {name:"faitha",dept:"cs",salary:40000},
+    {name:"dilaka",dept:"ds",salary:50000}]
+
+    let cs=0
+    let ds=0
+
+    for(let i=0;i<employee.length;i++){
+        if(employee[i].dept=="cs"){
+            cs+=employee[i].salary
+        }
+        if(employee[i].dept=="ds"){
+            ds+=employee[i].salary
+        }
+    }
+
+    console.log("CS salary:", cs)
+    console.log("DS salary:", ds)
+
+
+</script>

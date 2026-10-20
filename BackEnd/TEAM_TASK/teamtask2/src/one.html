@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let word="banana"
+        let check=""
+
+       for(let i=0;i<word.length;i++){
+        let exist=false
+            for(let j=0;j<check){
+                if(word[i]==check[j]){
+                    exist=false
+                }
+            }
+            if(!exist){
+                let count=0
+                for(let j=0;i<word.length;i++){
+                    if(word[i]==word[j]){
+                        count++
+                    }
+                }
+                console.log(`${word[i]} : ${count}`);
+                check+=word[i]
+                
+            }
+       }
+
+    </script>
+</html>
